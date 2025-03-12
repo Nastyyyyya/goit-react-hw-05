@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import style from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
-  const location = useLocation(); 
+  const location = useLocation();
 
   return (
     <div className={style.films}>
@@ -14,7 +14,7 @@ const MovieList = ({ movies }) => {
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
-            <h3>{movie.title}</h3>
+            <h3 className={style.filmTitle}>{movie.title}</h3>
           </Link>
         </div>
       ))}

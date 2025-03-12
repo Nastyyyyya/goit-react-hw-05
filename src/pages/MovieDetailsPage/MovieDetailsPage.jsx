@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import {
   useParams,
@@ -15,6 +15,8 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const [movie, setMovie] = useState(null);
 
+  const locationRef = useRef(location.state?.from || "/movies");
+
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
@@ -29,7 +31,7 @@ const MovieDetailsPage = () => {
     fetchMovieDetails();
   }, [movieId]);
 
-  const goBackLocation = location.state?.from || "/movies";
+  const goBackLocation = locationRef.current;
 
   if (!movie) return <div>Loading...</div>;
 
