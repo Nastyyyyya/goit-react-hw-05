@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import {
   useParams,
-  Link,
+  NavLink,
   Outlet,
   useNavigate,
   useLocation,
@@ -72,8 +72,22 @@ const MovieDetailsPage = () => {
 
       <p className={style.addInfo}>Additional information</p>
       <div className={style.links}>
-        <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+        <NavLink
+          to={`/movies/${movieId}/cast`}
+          className={({ isActive }) =>
+            isActive ? style.activeLink : style.inactiveLink
+          }
+        >
+          Cast
+        </NavLink>
+        <NavLink
+          to={`/movies/${movieId}/reviews`}
+          className={({ isActive }) =>
+            isActive ? style.activeLink : style.inactiveLink
+          }
+        >
+          Reviews
+        </NavLink>
       </div>
 
       <Outlet />

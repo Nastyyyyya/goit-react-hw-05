@@ -9,7 +9,7 @@ const MovieList = ({ movies }) => {
     <div className={style.films}>
       {movies.map((movie) => (
         <div className={style["film-item"]} key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location.pathname }}>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}

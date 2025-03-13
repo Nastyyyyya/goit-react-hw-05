@@ -47,3 +47,19 @@ img {
 .goBackButton:hover {
   background-color: #0056b3;
 }
+
+.inactiveLink {
+  text-decoration: none;
+  color: #555;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.activeLink {
+  text-decoration: none;
+  color: #0056b3;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 3px;
+}
